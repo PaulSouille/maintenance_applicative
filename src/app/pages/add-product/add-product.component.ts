@@ -2,6 +2,7 @@ import { Component, Inject, NgModule, Optional } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, ReactiveFormsModule, FormsModule, NgModel } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Products } from 'src/app/components/list-products/products';
+import { ProductsService } from 'src/app/services/products.service';
 
 
 @Component({
@@ -17,11 +18,13 @@ export class AddProductComponent  {
     name: new FormControl(),
     price: new FormControl(),
     description: new FormControl(),
-    image: new FormControl()
+    image: new FormControl(),
+    basicfile: new FormControl()
   });
   
   constructor(
     private formBuilder: FormBuilder,
+    private productsService: ProductsService
    ) {
       this.options = formBuilder.group({
         hideRequired: false,
@@ -34,7 +37,7 @@ export class AddProductComponent  {
 
   addProduct(){
     console.log(this.productForm.value);
-
+    this.productsService.addProduct(this.productForm.value);
     // this.postsService.addPost(new_post);
     this.productForm.reset();
     

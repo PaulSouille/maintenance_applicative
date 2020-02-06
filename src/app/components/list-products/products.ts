@@ -5,5 +5,6 @@ export interface Products {
     image: string;
     name: string;
     description: string;
+    str_image;
     
 }

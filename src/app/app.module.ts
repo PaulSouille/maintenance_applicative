@@ -20,6 +20,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatIconModule  } from '@angular/material';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ProductsService } from './services/products.service';
+
 export function hljsLanguages() {
   return [{ name: 'json', func: json }];
 }
@@ -34,7 +37,7 @@ export function hljsLanguages() {
     HomeContentComponent,
     LoadingComponent,
     AddProductComponent,
-    ListProductsComponent
+    ListProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +58,10 @@ export function hljsLanguages() {
     MatInputModule,
     MatIconModule,
     ReactiveFormsModule,
+    MaterialFileInputModule
   ],
-  providers: [],
+  providers: [ ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
