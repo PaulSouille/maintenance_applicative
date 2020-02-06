@@ -1,0 +1,16 @@
+.hero .app-logo {
+  max-width: 10.5rem;
+}
+
+.example-card {
+  max-width: 300px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.mat-image{
+  width: 100px;
+  height: 100px;
+}

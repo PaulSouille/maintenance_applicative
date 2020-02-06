@@ -1,0 +1,34 @@
+<div class="tp-container" [formGroup]="productForm" (submit)="addProduct()">
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Nom du produit</mat-label>
+      <input formControlName="name" matInput >
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Prix du produit</mat-label>
+      <input formControlName="price" matInput >
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" matInput >
+    </mat-form-field>
+  </p>
+
+
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Image</mat-label>
+      <textarea formControlName="image" matInput ></textarea>
+    </mat-form-field>
+  </p>
+  
+  <button  mat-raised-button color="primary" (click)="addProduct()">Poster</button>
+
+</div>
